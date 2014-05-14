@@ -23,6 +23,35 @@ public class Pessoa implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private String nome;
+    
+    private String cpf;
+
+    public Pessoa() {
+    }
+
+    public Pessoa(Long id, String nome, String cpf) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+    
     public Long getId() {
         return id;
     }
@@ -53,7 +82,7 @@ public class Pessoa implements Serializable {
 
     @Override
     public String toString() {
-        return "br.edu.ifnmg.tads.as.DomainModel.Pessoa[ id=" + id + " ]";
+        return nome;
     }
     
 }
