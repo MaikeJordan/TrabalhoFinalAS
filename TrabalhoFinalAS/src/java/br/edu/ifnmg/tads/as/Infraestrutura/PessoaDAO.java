@@ -17,9 +17,7 @@ import javax.persistence.Query;
 * @author Maike Jordan
 */
 @Stateless(name = "IPessoaRepositorio")
-public class PessoaDAO
-        extends GenericoDAO<Pessoa>
-        implements IPessoaRepositorio {
+public class PessoaDAO extends GenericoDAO<Pessoa> implements IPessoaRepositorio {
 
     public PessoaDAO() {
         super(Pessoa.class);

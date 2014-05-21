@@ -8,14 +8,13 @@ package br.edu.ifnmg.tads.as.Presentation;
 
 import br.edu.ifnmg.tads.as.DomainModel.Pessoa;
 import br.edu.ifnmg.tads.as.DomainModel.IPessoaRepositorio;
+import javax.inject.Named;
+import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import javax.ejb.EJB;
-import javax.faces.bean.SessionScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
-import javax.faces.convert.FacesConverter;
-import javax.inject.Named;
-import javax.persistence.Converter;
+import javax.faces.convert.Converter;
 
 /**
  *

@@ -11,5 +11,5 @@ package br.edu.ifnmg.tads.as.DomainModel;
  * @author ALUNO-2014-01
  */
 public interface IPessoaRepositorio extends RepositorioGenerico<Pessoa> {
-    public Pessoa Login(Pessoa pessoa);
+    
 }
