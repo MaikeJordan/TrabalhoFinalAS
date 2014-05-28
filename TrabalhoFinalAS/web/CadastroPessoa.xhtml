@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./Global.xhtml">
+
+            <ui:define name="content">
+                <br/>
+                Nome: <p:inputText value="#{pessoaController.entidade.nome}" 
+                                   required="true" requiredMessage="Este campo é obrigatorio"/>
+                CPF: <p:inputText value="#{pessoaController.entidade.cpf}" 
+                                   required="true" requiredMessage="Este campo é obrigatorio"/>
+                
+                <p:commandButton ajax="false" value="Salvar" action="#{pessoaController.salvar}"/>
+            </ui:define>
+        </ui:composition>
+
+    </body>
+</html>

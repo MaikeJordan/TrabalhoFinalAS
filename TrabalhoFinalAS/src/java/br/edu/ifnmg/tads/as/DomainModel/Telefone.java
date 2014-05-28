@@ -7,54 +7,22 @@
 package br.edu.ifnmg.tads.as.DomainModel;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
 
 /**
  *
  * @author Maike
  */
 @Entity
-@Inheritance
-public class Pessoa implements Serializable {
+public class Telefone implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String nome;
-    private String cpf;
-    private List<Email> emails;
-    
-    public Pessoa() {
-    }
 
-    public Pessoa(Long id, String nome, String cpf, Email emails) {
-        this.id = id;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.emails = (List<Email>) emails;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-    
     public Long getId() {
         return id;
     }
@@ -73,10 +41,10 @@ public class Pessoa implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Pessoa)) {
+        if (!(object instanceof Telefone)) {
             return false;
         }
-        Pessoa other = (Pessoa) object;
+        Telefone other = (Telefone) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -85,7 +53,7 @@ public class Pessoa implements Serializable {
 
     @Override
     public String toString() {
-        return nome;
+        return "br.edu.ifnmg.tads.as.DomainModel.Telefone[ id=" + id + " ]";
     }
     
 }

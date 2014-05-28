@@ -1,11 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 package br.edu.ifnmg.tads.as.Infraestrutura;
 
-import br.edu.ifnmg.tads.as.DomainModel.RepositorioGenerico;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -13,11 +11,10 @@ import javax.persistence.PersistenceContext;
 /**
  *
  * @author Maike Jordan
- * @param <T>
  */
-public abstract class GenericoDAO<T> implements RepositorioGenerico<T> {
+public abstract class GenericoDAO<T> {
 
-    @PersistenceContext(name = "GestaoPatrimonialPU")
+    @PersistenceContext(name = "Persistencia")
     protected EntityManager manager;
     private Class tipo;
 
@@ -25,7 +22,6 @@ public abstract class GenericoDAO<T> implements RepositorioGenerico<T> {
         tipo = t;
     }
 
-    @Override
     public boolean Salvar(T obj) {
         try {
             //salva o objeto
@@ -37,7 +33,6 @@ public abstract class GenericoDAO<T> implements RepositorioGenerico<T> {
         }
     }
 
-    @Override
     public T Abrir(Long id) {
         try {
             T obj = (T) manager.find(tipo, id);
@@ -50,7 +45,6 @@ public abstract class GenericoDAO<T> implements RepositorioGenerico<T> {
 
     public abstract List<T> Buscar(T obj);
 
-    @Override
     public boolean Apagar(T obj) {
         try {
             manager.remove(manager.merge(obj));
@@ -59,4 +53,5 @@ public abstract class GenericoDAO<T> implements RepositorioGenerico<T> {
             return false;
         }
     }
+
 }
