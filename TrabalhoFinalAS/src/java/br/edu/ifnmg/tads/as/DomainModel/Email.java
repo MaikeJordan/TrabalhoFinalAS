@@ -7,6 +7,7 @@
 package br.edu.ifnmg.tads.as.DomainModel;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,17 +22,18 @@ public class Email implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long emailid;
     
+    @Column(name = "endereco", length = 20)
     private String endereco;
 
     public Email(Long id, String endereco) {
-        this.id = id;
+        this.emailid = id;
         this.endereco = endereco;
     }
 
     public Email() {
-        this.id = null;
+        this.emailid = null;
         this.endereco = "";
     }
 
@@ -44,18 +46,18 @@ public class Email implements Serializable {
         this.endereco = endereco;
     }
     
-    public Long getId() {
-        return id;
+    public Long getEmailid() {
+        return emailid;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setEmaiid(Long id) {
+        this.emailid = id;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (emailid != null ? emailid.hashCode() : 0);
         return hash;
     }
 
@@ -66,7 +68,7 @@ public class Email implements Serializable {
             return false;
         }
         Email other = (Email) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.emailid == null && other.emailid != null) || (this.emailid != null && !this.emailid.equals(other.emailid))) {
             return false;
         }
         return true;
@@ -74,7 +76,7 @@ public class Email implements Serializable {
 
     @Override
     public String toString() {
-        return "br.edu.ifnmg.tads.as.DomainModel.Email[ id=" + id + " ]";
+        return endereco;
     }
     
 }
